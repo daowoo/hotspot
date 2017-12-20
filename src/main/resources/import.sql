@@ -30,41 +30,41 @@ INSERT INTO t_phone(phone_number, site_name, time) VALUES ( '13729827456', '王�
 DROP TABLE IF EXISTS t_car;
 CREATE TABLE t_car (
   id int PRIMARY KEY AUTO_INCREMENT,
-  plateNumber VARCHAR(45),
+  plate_number VARCHAR(45),
   time DATETIME,
   site_name VARCHAR(45)
 );
 
-INSERT INTO t_car(plateNumber, time, site_name) VALUE ('鄂A88Z0Y', '2016-01-04 00:00:00.00','王二淀');
-INSERT INTO t_car(plateNumber, time, site_name) VALUE ('鄂A88936', '2016-01-03 00:00:00.00','王二淀');
-INSERT INTO t_car(plateNumber, time, site_name) VALUE ('鄂A88867', '2016-01-05 00:00:00.00','黄花店');
+INSERT INTO t_car(plate_number, time, site_name) VALUE ('鄂A88Z0Y', '2016-01-04 00:00:00.00','王二淀');
+INSERT INTO t_car(plate_number, time, site_name) VALUE ('鄂A88936', '2016-01-03 00:00:00.00','王二淀');
+INSERT INTO t_car(plate_number, time, site_name) VALUE ('鄂A88867', '2016-01-05 00:00:00.00','黄花店');
 
 DROP TABLE IF EXISTS t_car2phone;
 CREATE TABLE t_car2phone (
   id int PRIMARY KEY AUTO_INCREMENT,
-  plateNumber VARCHAR(45),
-  phoneNumber LONG,
+  plate_number VARCHAR(45),
+  phone_number LONG,
   probability FLOAT
 );
 
-INSERT INTO t_car2phone(plateNumber, phoneNumber, probability) VALUE ('鄂A88936', '13528766265', '0.9');
-INSERT INTO t_car2phone(plateNumber, phoneNumber, probability) VALUE ('鄂A88936', '13528766269', '0.1');
-INSERT INTO t_car2phone(plateNumber, phoneNumber, probability) VALUE ('鄂A88Z0Y', '13528766264', '0.8');
-INSERT INTO t_car2phone(plateNumber, phoneNumber, probability) VALUE ('鄂A88Z0Y', '13528766234', '0.2');
-INSERT INTO t_car2phone(plateNumber, phoneNumber, probability) VALUE ('鄂A88867', '13528766263', '0.5');
-INSERT INTO t_car2phone(plateNumber, phoneNumber, probability) VALUE ('鄂A88867', '13528766345', '0.5');
+INSERT INTO t_car2phone(plate_number, phone_number, probability) VALUE ('鄂A88936', '13528766265', '0.9');
+INSERT INTO t_car2phone(plate_number, phone_number, probability) VALUE ('鄂A88936', '13528766269', '0.1');
+INSERT INTO t_car2phone(plate_number, phone_number, probability) VALUE ('鄂A88Z0Y', '13528766264', '0.8');
+INSERT INTO t_car2phone(plate_number, phone_number, probability) VALUE ('鄂A88Z0Y', '13528766234', '0.2');
+INSERT INTO t_car2phone(plate_number, phone_number, probability) VALUE ('鄂A88867', '13528766263', '0.5');
+INSERT INTO t_car2phone(plate_number, phone_number, probability) VALUE ('鄂A88867', '13528766345', '0.5');
 
 
 DROP TABLE IF EXISTS t_phone2car;
 CREATE TABLE t_phone2car (
   id int PRIMARY KEY AUTO_INCREMENT,
-  phoneNumber LONG,
-  plateNumber VARCHAR(45),
+  phone_number LONG,
+  plate_number VARCHAR(45),
   probability FLOAT
 );
-INSERT INTO t_phone2car(phoneNumber, plateNumber, probability) VALUE ('13528766265', '鄂A88936', '0.9');
-INSERT INTO t_phone2car(phoneNumber, plateNumber, probability) VALUE ('13528766265', '鄂A88Z0Y', '0.1');
-INSERT INTO t_phone2car(phoneNumber, plateNumber, probability) VALUE ('13528766234', '鄂A88867', '0.6');
-INSERT INTO t_phone2car(phoneNumber, plateNumber, probability) VALUE ('13528766234', '鄂A88936', '0.4');
+INSERT INTO t_phone2car(phone_number, plate_number, probability) VALUE ('13528766265', '鄂A88936', '0.9');
+INSERT INTO t_phone2car(phone_number, plate_number, probability) VALUE ('13528766265', '鄂A88Z0Y', '0.1');
+INSERT INTO t_phone2car(phone_number, plate_number, probability) VALUE ('13528766234', '鄂A88867', '0.6');
+INSERT INTO t_phone2car(phone_number, plate_number, probability) VALUE ('13528766234', '鄂A88936', '0.4');
 
 

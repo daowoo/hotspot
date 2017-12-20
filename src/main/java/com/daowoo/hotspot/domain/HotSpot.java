@@ -1,5 +1,6 @@
 package com.daowoo.hotspot.domain;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,110 +12,55 @@ import javax.persistence.*;
  * Created by apple on 09/11/2017.
  */
 @Entity
-@Table(name="t_hotspot")
+@Table(name="t_phone")
 public class HotSpot {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private Long IMSI;
-    private String location;
-    private String moduleName;
-    private String referredNumber;
-    private String city;
-    private String communicationType;
-    private Date collectTime;
-
-    @Transient
-    private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    private Long phoneNumber;
+    private String siteName;
+    private Timestamp time;
 
 
-    public HotSpot(Long IMSI, String location, String moduleName, String referredNumber, String stateLocation, String communicationType, String collectTime) throws ParseException {
-        this.IMSI = IMSI;
-        this.location = location;
-        this.moduleName = moduleName;
-        this.referredNumber = referredNumber;
-        this.city = stateLocation;
-        this.communicationType = communicationType;
-        this.collectTime = format.parse(collectTime);
+    public HotSpot(Long phoneNumber, String siteName, Timestamp time) throws ParseException {
+        this.phoneNumber = phoneNumber;
+        this.siteName = siteName;
+        this.time = time;
     }
 
     HotSpot(){}
 
-    public Long getId() {
-        return id;
+    public Long getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPhoneNumber(Long phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public Long getIMSI() {
-        return IMSI;
+    public String getSiteName() {
+        return siteName;
     }
 
-    public void setIMSI(Long IMSI) {
-        this.IMSI = IMSI;
+    public void setSiteName(String siteName) {
+        this.siteName = siteName;
     }
 
-    public String getSiteLocation() {
-        return location;
+    public Timestamp getTime() {
+        return time;
     }
 
-    public void setSiteLocation(String location) {
-        this.location = location;
-    }
-
-    public String getModuleName() {
-        return moduleName;
-    }
-
-    public void setModuleName(String moduleName) {
-        this.moduleName = moduleName;
-    }
-
-    public String getReferredNumber() {
-        return referredNumber;
-    }
-
-    public void setReferredNumber(String referredNumber) {
-        this.referredNumber = referredNumber;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getCommunicationType() {
-        return communicationType;
-    }
-
-    public void setCommunicationType(String communicationType) {
-        this.communicationType = communicationType;
-    }
-
-    public Date getCollectTime() {
-        return collectTime;
-    }
-
-    public void setCollectTime(Date timestamp) {
-        this.collectTime = timestamp;
+    public void setTime(Timestamp time) {
+        this.time = time;
     }
 
     @Override
     public String toString() {
-        return "SpotEntry{" +
-                "IMSI=" + IMSI +
-                ", location='" + location + '\'' +
-                ", moduleName='" + moduleName + '\'' +
-                ", referredNumber='" + referredNumber + '\'' +
-                ", city='" + city + '\'' +
-                ", communicationType='" + communicationType + '\'' +
-                ", collectTime=" + collectTime +
+        return "HotSpot{" +
+                "phoneNumber=" + phoneNumber +
+                ", siteName='" + siteName + '\'' +
+                ", time=" + time +
                 '}';
     }
 }

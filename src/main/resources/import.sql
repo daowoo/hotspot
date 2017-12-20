@@ -15,16 +15,16 @@ insert into t_site (site_name, ip, local_path, latitude, longitude) values ('黄
 DROP TABLE IF EXISTS t_phone;
 CREATE TABLE t_phone (
   id int PRIMARY KEY AUTO_INCREMENT,
-  phoneNumber LONG,
+  phone_number LONG,
   site_name VARCHAR(45),
   time DATETIME
 );
 
-INSERT INTO t_phone(phoneNumber, site_name, time) VALUES ( '13429827456', '王二淀', '2016-01-02 00:00:00.00');
-INSERT INTO t_phone(phoneNumber, site_name, time) VALUES ( '13429527456', '王二淀', '2016-01-03 00:00:00.00');
-INSERT INTO t_phone(phoneNumber, site_name, time) VALUES ( '13529827456', '王二淀', '2016-01-04 00:00:00.00');
-INSERT INTO t_phone(phoneNumber, site_name, time) VALUES ( '13629827456', '王二淀', '2016-01-05 00:00:00.00');
-INSERT INTO t_phone(phoneNumber, site_name, time) VALUES ( '13729827456', '王二淀', '2016-01-06 00:00:00.00');
+INSERT INTO t_phone(phone_number, site_name, time) VALUES ( '13429827456', '王二淀', '2016-01-02 00:00:00.00');
+INSERT INTO t_phone(phone_number, site_name, time) VALUES ( '13429527456', '王二淀', '2016-01-03 00:00:00.00');
+INSERT INTO t_phone(phone_number, site_name, time) VALUES ( '13529827456', '王二淀', '2016-01-04 00:00:00.00');
+INSERT INTO t_phone(phone_number, site_name, time) VALUES ( '13629827456', '王二淀', '2016-01-05 00:00:00.00');
+INSERT INTO t_phone(phone_number, site_name, time) VALUES ( '13729827456', '王二淀', '2016-01-06 00:00:00.00');
 
 
 DROP TABLE IF EXISTS t_car;
